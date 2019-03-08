@@ -1,0 +1,108 @@
+.example-container {
+  height: 100%;
+  vertical-align: middle;
+}
+
+.sideNav {
+  width: 100%;
+  display: block;
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0; //   margin-bottom: -99999px;
+  //   padding-bottom: 99999px;
+}
+
+.light-blue-skin .side-nav {
+  background-color: #6a9ed3;
+}
+
+@media only screen and (max-width: 1440px) {
+  .side-nav.fixed {
+    -webkit-transform: translateX(-105%);
+    -ms-transform: translateX(-105%);
+    transform: translateX(-105%);
+  }
+}
+
+.side-nav.fixed {
+  left: 0;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  position: fixed;
+}
+
+.sn-bg-1 {
+  background: url(https://mdbootstrap.com/img/Photos/Others/sidenav1.jpg);
+  background-blend-mode: hard-light;
+}
+
+.side-nav {
+  position: fixed; // width: 240px;
+  width: 340px;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  height: -webkit-calc(100%+ 60px);
+  height: calc(100%+ 60px);
+  height: -moz-calc(100%);
+  color: darkgrey;
+  background-color: #fff;
+  z-index: 999;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(-105%);
+  -ms-transform: translateX(-105%);
+  transform: translateX(-105%);
+  padding: 0;
+}
+
+.jarallax,
+.side-nav {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mdb-autocomplete-wrap,
+.side-nav {
+  left: 0;
+  overflow-y: auto;
+  list-style-type: none;
+}
+
+.rassetDiv {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-right: 30px;
+}
+
+mat-panel-title {
+  font-weight: bold; // color: #443957;
+  letter-spacing: .2px;
+}
+
+.mat-expansion-panel-body {
+  // color: #443957;
+  letter-spacing: .2px;
+}
+
+.mat-expansion-indicator {
+  // color: #443957 !important;
+}
+
+mat-progress-bar {
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+  height: 3px;
+  width: 100%;
+}

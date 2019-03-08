@@ -1,0 +1,13 @@
+<div class="chip" *ngFor="let item of selectedTags; let i= index">
+  {{item.name}}
+  <i class="fa fa-times" (click)="removeTag()"></i>
+</div>
+<br>
+<mat-form-field>
+  <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+  <span matPrefix>Search&nbsp;</span>
+</mat-form-field>
+<tree-root [nodes]="nodes" [options]="options" (activate)="addTag($event)"></tree-root>
+<p>
+
+</p>

@@ -1,0 +1,13 @@
+<mat-button-toggle-group name="fontStyle" #group="matButtonToggleGroup" aria-label="Font Style">
+  <mat-button-toggle *ngFor="let dept of department; let id = index" (click)="onDepartmentSelect(id)" value="{{id}}">{{dept.label}}</mat-button-toggle>
+</mat-button-toggle-group>
+<div class="card z-depth-5 hoverable mt-5" style="margin: 10px !important">
+  <ngx-datatable #table class="material" [rows]="rows[group.value].data" [columns]="columns" [columnMode]="'force'" [headerHeight]="50"
+    [footerHeight]="50" [rowHeight]="50" [reorderable]="'true'" [limit]="7" [scrollbarH]="true" [displayCheck]="displayCheck"
+    (activate)="onActivate($event)" [loadingIndicator]="loadingIndicator" (select)='onSelect($event)'>
+    <ngx-datatable-column name="ID" prop="Oid" [width]="80">
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Department" prop="Department" [width]="180">
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

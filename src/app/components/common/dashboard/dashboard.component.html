@@ -1,0 +1,179 @@
+<!-- <div class="row">
+   <div *ngFor="let item of cardData" class="col">
+    <div class="card card-cascade cascading-admin-card" [ngClass]="{ 'warning-color': 'warning-color',
+'primary-color': 'primary-color',
+'success-color': 'light-blue',
+'danger-color': 'danger-color',
+'warning-color': 'warning-color'}">
+      <div class="card-body">
+        <div class="pull-right">
+          <i class="fa fa-line-chart"></i>
+        </div>
+        <p>{{item.title}}</p>
+        <h4>
+          <strong>{{item.value}}</strong>
+        </h4>
+      </div>
+      <div class="progress">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{item.value}}" class="progress-bar bg grey darken-3" role="progressbar"
+          [ngStyle]="{ 'width': item.value+'%'}"></div>
+      </div>
+      <div class="card-body">
+        <p>{{item.description}}</p>
+      </div>
+    </div> 
+
+</div>
+
+<div *ngFor="let item of cardData" class="col-xl-3 col-md-6 mb-r">
+  <div class="card card-cascade cascading-admin-card">
+    <div class="admin-up">
+      <i class="fa fa-money primary-color"></i>
+      <div class="data">
+        <p>{{item.title}}</p>
+        <h4>
+          <strong>{{item.value}}</strong>
+        </h4>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="progress">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="{{item.value}}" class="progress-bar bg-primary" role="progressbar"
+          [ngStyle]="{'width': item.value+'%'}"></div>
+      </div>
+      <p class="card-text">{{item.description}}</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="text-left">
+
+  <div class="card">
+    <span class="card-header primary-color">
+      <span class="card-title">Title</span>
+    </span>
+    <div class="card-body">
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select>
+          <mat-option value="red">Red</mat-option>
+          <mat-option value="green">Green</mat-option>
+          <mat-option value="blue">Blue</mat-option>
+        </mat-select>
+        <span matPrefix>Name&nbsp;</span>
+      </mat-form-field>
+
+      <span class="checkbox">
+        <mat-checkbox color="primary">
+          <span class="checkboxLabel">Passed</span>
+        </mat-checkbox>
+      </span>
+
+      <hr>
+
+      <tree-root [nodes]="nodes" [options]="options"></tree-root>
+    </div>
+
+    <span class="card-footer">
+      <button (click)="toggleLoadingIndicator(true)" class="btn btn-sm btn-danger">Show</button>
+      <button (click)="toggleLoadingIndicator(false)" class="btn btn-sm btn-primary">Click</button>
+    </span>
+
+  </div>
+
+  <div class="ml-5">
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="value" class="example-right-align">
+      <span matPrefix>Name&nbsp;</span>
+    </mat-form-field>
+  </div>
+
+
+</div> -->
+<!-- <ngx-charts-tree-map [view]="view" [results]="data" [gradient]="true" (select)="onSelect($event)">
+</ngx-charts-tree-map> -->
+
+<!-- <input type='text' style='padding:8px;margin:15px auto;width:30%;' placeholder='Type to filter the name column...'
+  (keyup)='updateFilter($event)' /> -->
+<!-- <ngx-datatable #table class='material' [columns]="keys" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="'auto'" [limit]="10" [rows]='mainData'>
+</ngx-datatable> -->
+
+<!-- <div class="pt-5">
+  <div class="pt-5">
+    {{result | json}}
+  </div>
+</div> -->
+
+
+
+<div class="row">
+      <div class="panel panel-success">
+          <div class="panel-body" 
+               dnd-sortable-container
+               [sortableData]="sourceItems"
+               [dropZones]="['delete-dropZone']">
+              <div class="list-group">
+                   <span *ngFor="let item of sourceItems; let i = index;"
+                         dnd-sortable 
+                         [sortableIndex]="i" 
+                         style="margin-right: 5px !important;">{{item}}&nbsp;</span>
+              </div>              
+          </div>
+      </div>
+
+      <div class="panel panel-success">
+        <div class="panel-body" 
+             dnd-sortable-container
+             [sortableData]="listRecycled"
+             [dropZones]="['delete-dropZone']"
+             style="border: 1px solid gray;min-height: 50px;min-width: 50px">
+            <div class="list-group">
+                 <span *ngFor="let iteml of listRecycled; let p = index;"
+                       dnd-sortable 
+                       [sortableIndex]="p" 
+                       class="badge badge-info"
+                       
+                       style="margin: 4px !important;">{{iteml}}&nbsp;
+                       <i (click)="delete(p)" class="fa fa-times" aria-hidden="true"></i>
+                      </span>
+            </div>              
+        </div>
+      </div> 
+</div>
+
+<div class="card">
+<ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+</div>

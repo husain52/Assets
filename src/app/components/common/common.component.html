@@ -1,0 +1,112 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" [containerInside]="true">
+
+  <logo>
+    <a class="logo navbar-brand" (click)="drawer.toggle()">
+      <img src="assets/images/rsupport.png" alt="R-Assets" style="height: 30px; padding-right: 5px;" />
+      <strong style="color: rgba(66, 14, 14, 0.918); font-weight: bold">R-Assets</strong>
+    </a>
+
+  </logo>
+  <links>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active waves-light" mdbRippleRadius>
+        <a class="nav-link">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Features</a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Pricing</a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">Opinions</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </li>
+      <li class="nav-item waves-light" mdbRippleRadius>
+        <a class="nav-link">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </links>
+
+</mdb-navbar>
+<!-- Main -->
+
+<main>
+
+  <div class="container" style="height:1300px;">
+    <mat-progress-bar *ngIf="_engineService.SHOW_PROGRESS_BAR" mode="indeterminate" color="primary" style="position:relative; top:0; height: 3px; transform: rotateY(180deg)"></mat-progress-bar>
+
+
+    <mat-drawer-container [hasBackdrop]="true" class="mt-5 row" style="min-height: 500px; background-color: transparent">
+
+      <mat-drawer #drawer class="side-nav mt-5 col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3" [mode]="over">
+        <div class="mt-3">
+          <mat-accordion class="list-group">
+            <mat-expansion-panel *ngFor="let item of menu; let i = index">
+              <mat-expansion-panel-header mdbWavesEffect>
+                <mat-panel-title>
+                  {{item.item1}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-nav-list *ngIf="item.hasSubmenu">
+
+                <div *ngFor="let subItem of item.items">
+                  <mat-accordian *ngIf="subItem.hasSubmenu">
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          <a routerLink={{subItem.link2}}>{{subItem.item2}}</a>
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                      <mat-nav-list *ngIf="subItem.hasSubmenu ">
+                        <div *ngFor="let childItem of subItem.items">
+                          <a routerLink={{childItem.link3}} (click)="drawer.toggle() ">
+                            {{childItem.item3}}
+                          </a>
+                        </div>
+                      </mat-nav-list>
+                    </mat-expansion-panel>
+                  </mat-accordian>
+                  <mat-nav-list *ngIf="!subItem.hasSubmenu ">
+                    <a [routerLink]=[subItem.link2] (click)="drawer.toggle() ">{{subItem.item2}}</a>
+                  </mat-nav-list>
+                </div>
+
+              </mat-nav-list>
+
+              <mat-nav-list *ngIf="!item.hasSubmenu ">
+                <a routerLink={{item.link1}} (click)="drawer.toggle()"> {{item.item1}}</a>
+              </mat-nav-list>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-drawer>
+
+      <mat-drawer-content>
+        <main>
+          <div class="container-fluid mt-5 ">
+            <router-outlet></router-outlet>
+          </div>
+        </main>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+
+</main>

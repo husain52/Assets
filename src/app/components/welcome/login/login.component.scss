@@ -1,0 +1,27 @@
+.container-fluid {
+  background-size: cover;
+  height: 100vh !important;
+}
+
+.card {
+  // background-color: rgba(229, 228, 255, 0.4);
+  background-color: #ffffff;
+}
+
+.mat-form .prefix {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mat-form label {
+  color: #ffffff;
+}
+
+h4 {
+  line-height: 1.7; // text-shadow: 0 0 13px black;
+  color: black;
+}
+
+.full-width {
+  width: 100%;
+}
